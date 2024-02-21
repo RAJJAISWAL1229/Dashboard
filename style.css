@@ -6,78 +6,97 @@ body {
 
 header {
   background-color: rgb(19, 33, 70);
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  width: 200px;
-}
-
-nav {
-  text-align: center;
+  width: 12.5rem;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 31.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-nav li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-nav li a {
-  text-decoration: none;
-  color: white;
+nav li input {
+  list-style: none;
+  padding: 0.625rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
+  width: 12.5rem;
 }
 
 main {
-  padding: 20px;
+  padding: 1.25rem;
 }
 
-.search-bar {
+.options-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 1rem 0;
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.25rem;
+  padding: 0.3125rem 1rem;
+  background-color: #f5f5f5;
+  justify-content: space-between;
 }
 
-.search-bar input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 200px;
+.year-selector-div {
+  margin-right: 1rem;
 }
 
-.search-bar button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
+label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+select {
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.3125rem 0.5rem;
+  font-size: 1rem;
+  background-color: #fff;
   cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
 }
 
 .charts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 1.25rem;
 }
 
 .chart-container {
   background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 1.25rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem;
 }
 
 footer {
   background-color: #f1f1f1;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
 }
