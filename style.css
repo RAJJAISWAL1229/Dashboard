@@ -49,9 +49,6 @@ main {
   justify-content: space-between;
 }
 
-.year-selector-div {
-  margin-right: 1rem;
-}
 
 label {
   font-size: 0.9rem;
