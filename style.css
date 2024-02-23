@@ -12,21 +12,22 @@ header {
   align-items: center;
 }
 
-.logo {
-  width: 12.5rem;
+.logo-div {
+  width: 10rem;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 31.25rem;
+  width: 40rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-nav li input {
+input {
   list-style: none;
   padding: 0.625rem;
   border: 0.0625rem solid #ccc;
@@ -34,21 +35,21 @@ nav li input {
   width: 12.5rem;
 }
 
+
 main {
   padding: 1.25rem;
 }
 
-.options-bar {
+.options-bar-div {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin: 0rem auto 1rem;
   border: 0.0625rem solid #ddd;
   border-radius: 0.25rem;
   padding: 0.3125rem 1rem;
   background-color: #f5f5f5;
   justify-content: space-between;
 }
-
 
 label {
   font-size: 0.9rem;
@@ -79,17 +80,22 @@ button:hover {
   background-color: #2980b9; /* Darker blue on hover */
 }
 
-.charts {
+.charts-div {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.25rem;
 }
 
-.chart-container {
+.chart-container-div {
   background-color: #fff;
   padding: 1.25rem;
   border: 0.0625rem solid #ccc;
   border-radius: 0.25rem;
+  height: 25rem;
+  width: 42rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {

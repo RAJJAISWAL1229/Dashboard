@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+      <div class="logo-div">
         <img src="assets/logo.svg" alt="Logo" />
       </div>
 
@@ -17,67 +17,72 @@
         <ul>
           <li><input type="text" placeholder="ID" /></li>
           <li><input type="text" placeholder="PRODUCT CODE" /></li>
+          <li><button type="button" id="code-button">ENTER</button></li>
         </ul>
       </nav>
     </header>
     <main>
-      <div class="options-bar">
+      <div class="options-bar-div">
         <div class="year-selector-div">
-          <label for="years">Choose a Year:</label>
-          <select id="years" name="years">
-            <option value="volvo">2010</option>
-            <option value="saab">2011</option>
-            <option value="fiat">2012</option>
-            <option value="audi">2013</option>
+          <label for="year">Choose a Year:</label>
+          <input type="number" name="year" id="year-input" value="2020" />
+        </div>
+        <div class="x-selector-div">
+          <label for="x-axis-select">X Axis:</label>
+          <select id="x-axis-select" name="x-axis-select">
+            <option value="dcw">DCW</option>
+            <option value="atr">ATR</option>
+            <option value="pnl">PNL</option>
+            <option value="time">Time</option>
+            <option value="rt">Rt</option>
           </select>
         </div>
         <div class="y-selector-div">
-          <label for="y-axis">Y Axis:</label>
-          <select id="y-axis" name="y-axis">
-            <option value="volvo">Money</option>
-            <option value="saab">2011</option>
-            <option value="fiat">2012</option>
-            <option value="audi">2013</option>
-          </select>
-        </div>
-        <div class="x-selector-div">
-          <label for="x-axis">X Axis:</label>
-          <select id="x-axis" name="x-axis">
-            <option value="volvo">Stocks</option>
-            <option value="saab">2011</option>
-            <option value="fiat">2012</option>
-            <option value="audi">2013</option>
+          <label for="y-axis-select">Y Axis:</label>
+          <select id="y-axis-select" name="y-axis-select">
+            <option value="dcw">DCW</option>
+            <option value="atr">ATR</option>
+            <option value="pnl">PNL</option>
+            <option value="time">Time</option>
+            <option value="rt">Rt</option>
           </select>
         </div>
         <div class="chart-selector-div">
-          <label for="select-charts">Select Chart:</label>
-          <select id="select-charts" name="select-charts">
-            <option value="volvo">Candlestick</option>
-            <option value="saab">2011</option>
-            <option value="fiat">2012</option>
-            <option value="audi">2013</option>
+          <label for="chart-select">Select Chart:</label>
+          <select id="chart-select" name="chart-select">
+            <option value="scatter">Scatter</option>
+            <option value="line">Line</option>
+            <option value="bar">Bar</option>
           </select>
         </div>
         <div class="spread-selector-div">
-          <label for="spread">Select Spread:</label>
-          <select id="spread" name="spread">
-            <option value="volvo">Full</option>
-            <option value="saab">2011</option>
-            <option value="fiat">2012</option>
-            <option value="audi">2013</option>
+          <label for="spread-select">Select Spread:</label>
+          <select id="spread-select" name="spread-select">
+            <option value="jan-feb">jan-feb</option>
+            <option value="feb-mar">feb-mar</option>
+            <option value="mar-apr">mar-apr</option>
+            <option value="apr-may">apr-may</option>
+            <option value="may-jun">may-jun</option>
+            <option value="jun-jul">jun-jul</option>
+            <option value="jul-aug">jul-aug</option>
+            <option value="aug-sep">aug-sep</option>
+            <option value="sep-oct">sep-oct</option>
+            <option value="oct-nov">oct-nov</option>
+            <option value="nov-dec">nov-dec</option>
+            <option value="dec-jan">nov-dec</option>
           </select>
         </div>
-        <button type="button">Apply</button>
+        <button type="button" id="add-chart-button">Add</button>
       </div>
-      <div class="charts">
-        <div class="chart-container">
+      <div class="charts-div">
+        <div class="chart-container-div">
           <div id="chart_div"></div>
         </div>
-        <div class="chart-container">
-          <div id="barchart_material" style="width: 400px; height: 400px"></div>
+        <div class="chart-container-div">
+          <div id="barchart_material"></div>
         </div>
-        <div class="chart-container"></div>
-        <div class="chart-container"></div>
+        <div class="chart-container-div"></div>
+        <div class="chart-container-div"></div>
       </div>
     </main>
     <footer>
