@@ -35,7 +35,6 @@ input {
   width: 12.5rem;
 }
 
-
 main {
   padding: 1.25rem;
 }
@@ -80,7 +79,7 @@ button:hover {
   background-color: #2980b9; /* Darker blue on hover */
 }
 
-.charts-div {
+.charts-grid-div {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.25rem;
@@ -98,8 +97,13 @@ button:hover {
   align-items: center;
 }
 
+.chart-div {
+  width: 100%;
+  height: 100%;
+}
+
 footer {
   background-color: #f1f1f1;
-  padding: 1.25rem;
+  padding: 0.5rem;
   text-align: center;
 }
