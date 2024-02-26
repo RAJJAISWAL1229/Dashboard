@@ -1,45 +1,30 @@
-google.charts.load("current", { packages: ["corechart", "bar"] });
-google.charts.setOnLoadCallback(fetchAndDrawChart);
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
 
-function fetchAndDrawChart() {
-  // Fetch data from API endpoint
-  fetch('YOUR_API_ENDPOINT')
-    .then(response => response.json())
-    .then(data => {
-      // Process data to format it for Google Charts
-      var chartData = [['Year', 'Sales', 'Expenses', 'Profit']];
-      data.forEach(item => {
-        chartData.push([item.year, item.sales, item.expenses, item.profit]);
-      });
+function drawBasic() {
 
-      // Draw chart with processed data
-      drawChart(chartData);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-}
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population',],
+        ['New York City, NY', 8175000],
+        ['Los Angeles, CA', 3792000],
+        ['Chicago, IL', 2695000],
+        ['Houston, TX', 2099000],
+        ['Philadelphia, PA', 1526000]
+      ]);
 
-function drawChart(chartData) {
-  var data = google.visualization.arrayToDataTable(chartData);
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
 
-  var options = {
-    chart: {
-      title: "Company Performance",
-      subtitle: "Sales, Expenses, and Profit: 2014-2017",
-    },
-    bars: "vertical",
-  };
+      var chart = new google.visualization.BarChart(document.getElementById('barchart_material'));
 
-  var chart = new google.charts.Bar(
-    document.getElementById("barchart_material")
-  );
-
-  // Event listener for click events
-  google.visualization.events.addListener(chart, 'click', function (event) {
-    // Handle click event here
-    console.log('Clicked on a bar:', event);
-  });
-
-  chart.draw(data, google.charts.Bar.convertOptions(options));
-}
+      chart.draw(data, options);
+    }
