@@ -1,30 +1,34 @@
-google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
+google.charts.load("current", { packages: ["corechart", "bar"] });
 
-function drawBasic() {
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("pl.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const processedData = data.map((item) => {
+        return [item.time, parseInt(item.pl.replace(/,/g, ""))];
+      });
+      const newData = [["time", "pl"], ...processedData];
+      console.log(newData);
+      drawChart(newData);
+    })
+    .catch((error) => {
+      console.error("Error fetching JSON:", error);
+    });
+});
+function drawChart(dataTable) {
+  var data = google.visualization.arrayToDataTable(dataTable);
 
-      var data = google.visualization.arrayToDataTable([
-        ['City', '2010 Population',],
-        ['New York City, NY', 8175000],
-        ['Los Angeles, CA', 3792000],
-        ['Chicago, IL', 2695000],
-        ['Houston, TX', 2099000],
-        ['Philadelphia, PA', 1526000]
-      ]);
+  var options = {
+    chart: {
+      title: "P&L",
+      subtitle: "P&L",
+    },
+    bars: "vertical",
+  };
 
-      var options = {
-        title: 'Population of Largest U.S. Cities',
-        chartArea: {width: '50%'},
-        hAxis: {
-          title: 'Total Population',
-          minValue: 0
-        },
-        vAxis: {
-          title: 'City'
-        }
-      };
+  var chart = new google.charts.Bar(
+    document.getElementById("barchart_material")
+  );
 
-      var chart = new google.visualization.BarChart(document.getElementById('barchart_material'));
-
-      chart.draw(data, options);
-    }
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+}
